@@ -1,12 +1,12 @@
 SELECT 
     p.origin,
-    ao.country,
-    ao.city,
-    ao.name,
+    ao.country AS o_country,
+    ao.city AS o_city,
+    ao.name AS o_name,
     p.dest AS destination,
-    ad.country,
-    ad.city,
-    ad.name,
+    ad.country AS d_country,
+    ad.city AS d_city,
+    ad.name d_name,
     COUNT(*) AS total_flights,
     COUNT(DISTINCT tail_number) AS unique_airplanes,
     COUNT(DISTINCT airline) AS unique_airlines, 
@@ -22,5 +22,5 @@ JOIN {{ref('prep_airports')}} ao
 ON ao.faa = p.origin
 JOIN {{ref('prep_airports')}} ad
 ON ad.faa = p.dest
-GROUP BY origin, dest, ao.country, ao.city,ao.name,ad.country,ad.city,ad.name
+GROUP BY origin, dest, ao.country,ao.city,ao.name,ad.country,ad.city,ad.name
 
