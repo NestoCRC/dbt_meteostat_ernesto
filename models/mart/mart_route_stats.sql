@@ -20,7 +20,7 @@ SELECT
 FROM  {{ref('prep_flights')}} p
 JOIN {{ref('prep_airports')}} ao
 ON ao.faa = p.origin
-JOIN {{ref(prep_airports)}} ad
+JOIN {{ref('prep_airports')}} ad
 ON ad.faa = p.dest
 GROUP BY origin, dest, ao.country, ao.city,ao.name,ad.country,ad.city,ad.name
 
