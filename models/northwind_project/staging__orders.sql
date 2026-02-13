@@ -1,7 +1,7 @@
 WITH staging__orders AS(
 SELECT * 
 FROM {{source('northwind_data','orders')}}
-),
+)
 SELECT orderid::varchar AS order_id,
        customerid AS customer_id,
        employeeid AS employee_id,
