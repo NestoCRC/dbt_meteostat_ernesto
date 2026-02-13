@@ -1,3 +1,7 @@
+WITH staging__orders AS(
+SELECT * 
+FROM {{source('northwind','orders')}}
+),
 SELECT orderid::varchar AS order_id,
        customerid AS customer_id,
        employeeid AS employee_id,
@@ -10,4 +14,4 @@ SELECT orderid::varchar AS order_id,
        shipregion AS region, 
        shippostalcode AS postal_code,
        shipcountry AS country
-FROM {{source('northwind','orders')}}
+FROM staging__orders
