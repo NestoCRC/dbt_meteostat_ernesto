@@ -26,4 +26,4 @@ JOIN staging__order_details od ON o.order_id = od.order_id
 JOIN staging__products p ON od.product_id = p.product_id
 JOIN staging__categories c ON c.category_id = p.category_id
 )
-SELECT * FROM joined;
+SELECT * FROM joined
