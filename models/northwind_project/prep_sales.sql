@@ -4,7 +4,7 @@ FROM {{ref('staging__products')}}
 ),
 prep_order_details AS (
 SELECT * 
-FROM {{ref('staging__order_details)'}}
+FROM {{ref('staging__order_details')}}
 ),
 prep_orders AS (
 SELECT * 
