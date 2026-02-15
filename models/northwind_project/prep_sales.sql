@@ -8,7 +8,7 @@ FROM {{ref('staging__order_details')}}
 ),
 prep_orders AS (
 SELECT * 
-FROM ref{{ref('staging__orders')}}
+FROM {{ref('staging__orders')}}
 ),
 joined AS (
 SELECT o.order_id,
